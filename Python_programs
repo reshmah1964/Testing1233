@@ -1,0 +1,58 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyPex5d3nbiXWIPIYGFskUUN",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/reshmah1964/Testing1233/blob/Sprint1/Python_programs\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "1NoIvho5egTr"
+      },
+      "outputs": [],
+      "source": [
+        "a = int(input(\"total number of tests: \"))\n",
+        "if a > 0:\n",
+        "    b = int(input(\"Number of tests passed: \"))\n",
+        "    if b >= 0 and b <= a:\n",
+        "        c = a - b\n",
+        "        d = (b / a) * 100\n",
+        "        if d >= 90:\n",
+        "            print(\"Excellent\")\n",
+        "        elif d >= 75 and d < 90:\n",
+        "            print(\"Good\")\n",
+        "        elif d >= 50 and d < 75:\n",
+        "            print(\"Needs improvement\")\n",
+        "        else:\n",
+        "            print(\"Critical\")\n",
+        "    else:\n",
+        "        print(\"invalid input\")\n",
+        "else:\n",
+        "    print(\"invalid total tests\")"
+      ]
+    }
+  ]
+}
