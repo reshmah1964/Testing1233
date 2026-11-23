@@ -4,7 +4,7 @@
   "metadata": {
     "colab": {
       "provenance": [],
-      "authorship_tag": "ABX9TyO+M4DEvQmp6kbOWWGs6k8G",
+      "authorship_tag": "ABX9TyOgfk4gdYN/KpqVxm26kSkb",
       "include_colab_link": true
     },
     "kernelspec": {
@@ -34,6 +34,7 @@
       },
       "outputs": [],
       "source": [
+        "#PROGRAMS FOR VARIABLES,IF ELSE#\n",
         "a = int(input(\"total number of tests: \"))\n",
         "if a > 0:\n",
         "    b = int(input(\"Number of tests passed: \"))\n",
@@ -57,6 +58,111 @@
     {
       "cell_type": "code",
       "source": [
+        "attempts = 0\n",
+        "passed = 0\n",
+        "failed = 0\n",
+        "max_attempts = 3\n",
+        "status = \"FAIL\"\n",
+        "\n",
+        "while attempts < max_attempts:\n",
+        "    result = input(\"Enter the result (pass/fail): \")\n",
+        "    result = result.strip().upper()\n",
+        "\n",
+        "    if result == \"PASS\":\n",
+        "        passed = passed + 1\n",
+        "        attempts = attempts + 1\n",
+        "        status = \"PASS\"\n",
+        "        break\n",
+        "    elif result == \"FAIL\":\n",
+        "        failed = failed + 1\n",
+        "        attempts = attempts + 1\n",
+        "        print(\"Test failed. Retrying...\")\n",
+        "    else:\n",
+        "        print(\"invalid result\")\n",
+        "\n",
+        "print(\"total tests\", attempts)\n",
+        "print(\"number of tests passed\", passed)\n",
+        "print(\"number of tests failed\", failed)\n",
+        "print(\"final status\", status)"
+      ],
+      "metadata": {
+        "id": "OlfRp7bOo7xi"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "passed = 0\n",
+        "failed = 0\n",
+        "skipped = 0\n",
+        "invalid = 0\n",
+        "\n",
+        "result = input(\"Enter result: \").strip().upper()\n",
+        "while result != \"DONE\":\n",
+        "    if result == \"PASS\":\n",
+        "        passed = passed + 1\n",
+        "    elif result == \"FAIL\":\n",
+        "        failed = failed + 1\n",
+        "    elif result == \"SKIP\":\n",
+        "        skipped = skipped + 1\n",
+        "    else:\n",
+        "        invalid = invalid + 1\n",
+        "    result = input(\"Enter result: \").strip().upper()\n",
+        "\n",
+        "total = passed + failed + skipped + invalid\n",
+        "if total >0:\n",
+        "    percentage = (passed / total) * 100\n",
+        "else:\n",
+        "    percentage = 0\n",
+        "print(\"Total tests:\", total)\n",
+        "print(\"Passed:\", passed)\n",
+        "print(\"Failed:\", failed)\n",
+        "print(\"Skipped:\", skipped)\n",
+        "print(\"Invalid:\", invalid)\n",
+        "print(\"Percentage:\", percentage)"
+      ],
+      "metadata": {
+        "id": "tg-EfZFMVkHz"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "passed =0\n",
+        "failed = 0\n",
+        "skipped = 0\n",
+        "invalid = 0\n",
+        "test_results = {\n",
+        "    \"login\": \"PASS\",\n",
+        "    \"search\": \"FAIL\",\n",
+        "    \"checkout\": \"PASS\",\n",
+        "    \"profile\": \"SKIP\",\n",
+        "    \"logout\": \"PASS\"\n",
+        "}"
+      ],
+      "metadata": {
+        "id": "cqRFf70IVI0D"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "3z-mwoONVIKZ"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#PROGRAMS FOR FOR LOOP\n",
         "passed =0\n",
         "failed =0\n",
         "for i in range(1,6):\n",
@@ -69,8 +175,7 @@
         "print(\"total tests\",i)\n",
         "print(\"number of tests passed\",passed)\n",
         "print(\"percentage of tests passed\",d)\n",
-        "print(\"number of tests failed\",failed)\n",
-        ""
+        "print(\"number of tests failed\",failed)\n"
       ],
       "metadata": {
         "colab": {
@@ -79,7 +184,7 @@
         "id": "f9j0t9DeRP7i",
         "outputId": "51b62b2e-c2b8-465a-c4d6-88cf79876764"
       },
-      "execution_count": 3,
+      "execution_count": null,
       "outputs": [
         {
           "output_type": "stream",
@@ -97,6 +202,280 @@
           ]
         }
       ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Dictionary\n",
+        "Passed = 0\n",
+        "Failed = 0\n",
+        "Skipped =0\n",
+        "invalid = 0\n",
+        "test_results = {\n",
+        "    \"login\": \"PASS\",\n",
+        "    \"search\": \"FAIL\",\n",
+        "    \"checkout\": \"PASS\",\n",
+        "    \"profile\": \"SKIP\",\n",
+        "    \"logout\": \"PASS\"\n",
+        "}\n",
+        "total = len(test_results)\n",
+        "for test in test_results:\n",
+        "  print(f\"Test: {test} - {test_results[test]}\")\n",
+        "  if test_results[test] == \"PASS\":\n",
+        "    Passed += 1\n",
+        "  elif test_results[test] == \"FAIL\":\n",
+        "    Failed += 1\n",
+        "  elif test_results[test] == \"SKIP\":\n",
+        "    Skipped += 1\n",
+        "  else:\n",
+        "    invalid += 1\n",
+        "print(\"Passed:\", Passed)\n",
+        "print(\"Failed:\", Failed)\n",
+        "print(\"Skipped:\", Skipped)\n",
+        "print(\"Invalid:\", invalid)\n",
+        "\n",
+        "print(\"total tests\",total)\n",
+        "pass_per = (Passed/total) *100\n",
+        "print(\"percentage of tests passed\",pass_per)"
+      ],
+      "metadata": {
+        "id": "AdkG2Us-bFid"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# program for lists\n",
+        "results = [\"PASS\", \"FAIL\", \"SKIP\", \"PASS\", \"FAIL\", \"PASS\"]\n",
+        "total = len(results)\n",
+        "passed = 0\n",
+        "failed = 0\n",
+        "skipped = 0\n",
+        "for result in results:\n",
+        "    if result == \"PASS\":\n",
+        "        passed += 1\n",
+        "    elif result == \"FAIL\":\n",
+        "        failed += 1\n",
+        "    elif result == \"SKIP\":\n",
+        "        skipped += 1\n",
+        "d = passed/total *100\n",
+        "print(\"total tests\",total)\n",
+        "print(\"number of tests passed\",passed)\n",
+        "print(f\"percentage of tests passed,{d:.2f}%\")\n",
+        "print(\"number of tests failed\",failed)\n",
+        "print(\"number of tests skipped\",skipped)"
+      ],
+      "metadata": {
+        "id": "4zg5CRRlqsnb"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def per_cal():\n",
+        "    Total = int(input(\"total tests: \"))\n",
+        "    if (Total) > 0:\n",
+        "        Passed = int(input(\"number of tests passed: \"))\n",
+        "        if Passed >= 0 and Passed <= Total:\n",
+        "            Per = (Passed / Total) * 100\n",
+        "            return Per\n",
+        "        else:\n",
+        "            return \"invalid input\"\n",
+        "    else:\n",
+        "        return \"invalid input\"\n",
+        "\n",
+        "print(\"the per calculation is\", per_cal())"
+      ],
+      "metadata": {
+        "id": "OJsebuEJh8RT"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "test_results = {\n",
+        "    \"login\": \"Pass\",\n",
+        "    \"search\": \"Fail\",\n",
+        "    \"checkout\": \"Pass\",\n",
+        "    \"profile\": \"Skip\",\n",
+        "    \"logout\": \"BROKEN\"\n",
+        "}\n",
+        "\n",
+        "def generate_report(test_results):\n",
+        "    passed = 0\n",
+        "    failed = 0\n",
+        "    skipped = 0\n",
+        "    broken = 0\n",
+        "\n",
+        "    total = len(test_results)\n",
+        "\n",
+        "    if total > 0:\n",
+        "        for test_name, result in test_results.items():\n",
+        "            print(test_name, result)\n",
+        "            if result == \"Pass\":\n",
+        "                passed = passed + 1\n",
+        "            elif result == \"Fail\":\n",
+        "                failed = failed + 1\n",
+        "            elif result == \"Skip\":\n",
+        "                skipped = skipped + 1\n",
+        "            elif result == \"BROKEN\":\n",
+        "                broken = broken + 1\n",
+        "            else:\n",
+        "                print(\"test is invalid\")\n",
+        "\n",
+        "        Per = (passed / total) * 100\n",
+        "        print(\"the per is\", Per)\n",
+        "        print(\"total tests\", total)\n",
+        "        print(\"number of tests passed\", passed)\n",
+        "        print(\"number of tests failed\", failed)\n",
+        "        print(\"number of tests skipped\", skipped)\n",
+        "        print(\"number of tests broken\", broken)\n",
+        "        return Passed, Failed, Skipped, Broken, Per\n",
+        "    else:\n",
+        "        print(\"total invalid\")\n",
+        "        return 0\n",
+        "\n",
+        "report = generate_report(test_results)\n",
+        "print(\"Final report:\", report)"
+      ],
+      "metadata": {
+        "id": "8IFU6ZtV07jE"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Functions\n",
+        "test_results = {\n",
+        "    \"login\": \"PASS\",\n",
+        "    \"search\": \"FAIL\",\n",
+        "    \"checkout\": \"PASS\",\n",
+        "    \"profile\": \"SKIP\",\n",
+        "    \"logout\": \"FAIL\",\n",
+        "    \"payment\": \"PASS\"\n",
+        "}\n",
+        "def find_failed_tests(test_results):\n",
+        "    failed_tests = []\n",
+        "    for test_name, result in test_results.items():\n",
+        "        if result == \"FAIL\":\n",
+        "            failed_tests.append(test_name)\n",
+        "    return failed_tests\n",
+        "failed_tests = find_failed_tests(test_results)\n",
+        "print(\"Failed tests:\", failed_tests)\n",
+        "print(\"Number of failed tests:\", len(failed_tests))"
+      ],
+      "metadata": {
+        "id": "ztyf1PK_Dl7_"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "      results = {\n",
+        "      \"login\": \"PASS\",\n",
+        "      \"search\": \"FAIL\",\n",
+        "      \"checkout\": \" pass \",\n",
+        "      \"profile\": \"SKIP\",\n",
+        "      \"logout\": \"BROKEN\"\n",
+        "  }\n",
+        "\n",
+        "  def analyze_results(results):\n",
+        "      passed = 0\n",
+        "      failed = 0\n",
+        "      skipped = 0\n",
+        "      broken = 0\n",
+        "      total = len(results)\n",
+        "      if total >0:\n",
+        "      for test_name,result in results.items():\n",
+        "\n",
+        "\n",
+        "            result = result.strip().upper()\n",
+        "            if result == \"PASS\":\n",
+        "                  passed = passed+1\n",
+        "\n",
+        "\n",
+        "              elif result == \"FAIL\"\n",
+        "                  failed = failed+1\n",
+        "\n",
+        "\n",
+        "\n",
+        "              elif result == \"SKIP\"\n",
+        "                  skipped = skipped+1\n",
+        "\n",
+        "\n",
+        "\n",
+        "              else result == \"BROKEN\"\n",
+        "                  broken = broken+1\n",
+        "\n",
+        "\n",
+        "      Per = (Passed)/total * 100\n",
+        "      print(\"The per\",Per)\n",
+        "      print(\"total tests\",total)\n",
+        "      print(\"number of tests passed\",passed)\n",
+        "      print(\"number of tests failed\",failed)\n",
+        "      print(\"number of tests skipped\",skipped)\n",
+        "      print(\"number of tests broken\",broken)"
+      ],
+      "metadata": {
+        "id": "wA2Cc5u5UzB4"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "test_results = {\n",
+        "    \"login\": \"PASS\",\n",
+        "    \"search\": \"FAIL\",\n",
+        "    \"checkout\": \"PASS\",\n",
+        "    \"profile\": \"SKIP\",\n",
+        "    \"logout\": \"FAIL\",\n",
+        "    \"payment\": \"PASS\"\n",
+        "}\n",
+        "\n",
+        "def count_failed_test(test_results):\n",
+        "    Passed = 0\n",
+        "    Failed = 0\n",
+        "    Skipped = 0\n",
+        "    total = len(test_results)\n",
+        "\n",
+        "    if total > 0:\n",
+        "        for test_name, result in test_results.items():\n",
+        "            if result == \"FAIL\":\n",
+        "                Failed = Failed + 1\n",
+        "            elif result == \"PASS\":\n",
+        "                Passed = Passed + 1\n",
+        "            elif result == \"SKIP\":\n",
+        "                Skipped = Skipped + 1\n",
+        "\n",
+        "        Per = (Passed / total) * 100\n",
+        "        print(\"Total tests:\", total)\n",
+        "        print(\"Passed tests:\", Passed)\n",
+        "        print(\"Failed tests:\", Failed)\n",
+        "        print(\"Skipped tests:\", Skipped)\n",
+        "        return Passed, Failed, Skipped, Per\n",
+        "    else:\n",
+        "        print(\"No tests found\")\n",
+        "        return 0, 0, 0, 0\n",
+        "\n",
+        "Passed,Failed,Skipped,Broken = count_failed_test(test_results)"
+      ],
+      "metadata": {
+        "id": "nnt0-VcMNSpY"
+      },
+      "execution_count": null,
+      "outputs": []
     }
   ]
 }
